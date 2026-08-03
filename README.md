@@ -1,7 +1,5 @@
 # TreeX Robotics — Junior Software Developer Home Task
 
-**Language:** C++ (C++17). Build with CMake.
-
 
 ## The task: sensor log processor
 
@@ -33,10 +31,12 @@ the mean value it reported and the gap detection of the sensor.
 3. We skip malformed lines, and report how many lines were skipped.
 4. We print a summary report of each sensor report to stdout.
 
+
 ### Our files:
 
-- Our project consits of a source file: `TreeX_Robotics_Task.cpp`, an header file: `TreeX_Robotics_Task.h` and a CMake file: `CMakeLists.txt`.
+- Our project is a the C++ (C++17) lenguage project, Built with CMake.
 
+- Our project consits of a source file: `TreeX_Robotics_Task.cpp`, an header file: `TreeX_Robotics_Task.h` and a CMake file: `CMakeLists.txt`.
 
 - We also present an example input file: `sample_log.txt`.
 
@@ -47,14 +47,18 @@ sum of reported values (to become the mean), the number of gap detections and th
 
 
 - We read the input file (if opened correctly) line by line, we check its validity by verifing the required format: 
-<timestamp_ms> <sensor_id> <value> where 'timestamp_ms' is an all digit string and 'value' is a floating point string.
+<timestamp_ms> <sensor_id> <value> where 'timestamp_ms' is an all digit string and 'value' is a floating point string. We count each invalid line.
 
 
 - We parse each valid line, split it into three parts and convert the 'timestamp_ms' to an integer and the 'value' string to a double number.
 
 - We check if the current sensor_id apear in the map, and if not we add it to the map and initialize its stored data.
 
-- We store the relevant data of the current sensor on the map object: increase its counter, updating (if needed) its minumum and maximum values and
-add the current reported value to the stored sum. In addition, we check if the current timestamp is considered as gap with respect to the previous
-timestamp of the current sensor, and if so, we incriment the sensor's gap detection counter. Finaly, we save the current timestamp (as the previous
-timestamp) and move to the next line.
+- We store the relevant data of the current sensor on the map object: incriment its counter, updating (if needed) its minumum and maximum values and
+add the current reported value to the stored sum.
+
+- We check if the current timestamp is considered as gap with respect to the previous timestamp of the current sensor, and if so we incriment
+the sensor's gap detection counter. Then we save the current timestamp (as the previous timestamp) and move to the next line.
+
+- Finaly, we loop over each sensor in the map, we calculate its mean value and output all its stored data to the stdout.
+In addition, we present the number of invalid lines appeared in the input file.
