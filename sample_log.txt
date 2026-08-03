@@ -1,0 +1,18 @@
+1000 imu 0.12
+1005 temp 21.4
+1100 lidar 3.30
+1200 imu 0.15
+1300 temp 5.1
+1400 lidar 3.28
+1500 imu 0.11
+1500 lidar 3.31
+1600 temp -2.7
+1800 imu 0.14
+1900 temp -4.2
+xxxx imu 0.99
+2000 imu 0.13
+2100 temp 0.0
+2200 imu
+3200 imu 0.10
+
+3500 lidar 3.40
