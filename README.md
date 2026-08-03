@@ -34,7 +34,7 @@ the mean value it reported and the sensor's gap detection count.
 
 ### Our design and code:
 
-1. In our project we use a map object that for each `sensor_id` stores six values: its occurrence counter, minimum reported value, maximum reported value,
+1. In the program we use a map object that for each `sensor_id` stores six values: its occurrence counter, minimum reported value, maximum reported value,
 sum of reported values (to become the mean), the number of gap detections and the previous timestamp (in ms) in which the sensor reported a value.
 
 
@@ -60,7 +60,7 @@ In addition, we present the number of invalid lines found in the input file.
 
 - Our project is a C++ (C++17) project, built with CMake.
 
-- Our project consists of a source file: `TreeX_Robotics_Task.cpp`, a header file: `TreeX_Robotics_Task.h` and a CMake file: `CMakeLists.txt`.
+- The project consists of a source file: `TreeX_Robotics_Task.cpp`, a header file: `TreeX_Robotics_Task.h` and a CMake file: `CMakeLists.txt`.
 
 - We also present an example input file: `sample_log.txt`.
 
@@ -71,6 +71,7 @@ In addition, we present the number of invalid lines found in the input file.
 In order to build the project, use the following CMake command:
 
 ```
+cmake -S . -B build
 cmake --build build
 ```
 
