@@ -86,7 +86,7 @@ In order to run the project using the provided sample_log.txt file use the follo
 .\build\Debug\TreeX_Robotics_Task.exe .\sample_log.txt
 ```
 
-If you the use a 300 ms gap threshold instead of the default 500 ms, run following command:
+If you want to use a 300 ms gap threshold instead of the default 500 ms, run following command:
 
 ```
 .\build\Debug\TreeX_Robotics_Task.exe .\sample_log.txt 300ms
