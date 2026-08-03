@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
             timestamp = parts[0];
             sensor_id = parts[1];
             value = parts[2];
-            value_num = stold(value);
             timestamp_num = stoi(timestamp);
+            value_num = stold(value);
             if (dict.find(sensor_id) == dict.end())
             {
                 dict[sensor_id] = array<double, 6>();

@@ -31,7 +31,7 @@ the mean value it reported and the gap detection of the sensor.
    consecutive readings of that sensor exceeds a threshold. Threshold is **500 ms by default** and
    can be configurable by the user.
 3. We skip malformed lines, and report how many lines were skipped.
-4. Print a readable summary report to stdout.
+4. We print a summary report of each sensor report to stdout.
 
 ### Our files:
 
@@ -41,7 +41,16 @@ the mean value it reported and the gap detection of the sensor.
 - We also present an example input file: `sample_log.txt`.
 
 
-### Our design and algorithm:
+### Our design and code:
+- In our project we use a map object that for each 'sensor_id' stores 6 values: its appearance counter, minimum reported value, maximum reported value,
+sum of reported values (to become the mean), the number of gap detections and the previous timestamp (in ms) in which the sensor reproted a value.
 
-- Don't load the entire file into memory at once — process it as a stream. (The real logs are large.)
 
+- We read the input file (if opened correctly) line by line, we check its validity by verifing the required format: 
+<timestamp_ms> <sensor_id> <value> where 'timestamp_ms' is an all digit string and 'value' is a floating point string.
+
+
+- We parse each valid line, split it into three parts and convert the 'timestamp_ms' to an integer and the 'value' string to a double number.
+
+
+-
