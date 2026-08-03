@@ -52,5 +52,9 @@ sum of reported values (to become the mean), the number of gap detections and th
 
 - We parse each valid line, split it into three parts and convert the 'timestamp_ms' to an integer and the 'value' string to a double number.
 
+- We check if the current sensor_id apear in the map, and if not we add it to the map and initialize its stored data.
 
--
+- We store the relevant data of the current sensor on the map object: increase its counter, updating (if needed) its minumum and maximum values and
+add the current reported value to the stored sum. In addition, we check if the current timestamp is considered as gap with respect to the previous
+timestamp of the current sensor, and if so, we incriment the sensor's gap detection counter. Finaly, we save the current timestamp (as the previous
+timestamp) and move to the next line.
