@@ -68,7 +68,7 @@ In addition, we present the number of invalid lines found in the input file.
 
 ### Building the project:
 
-In order to build the project, use the following CMake command:
+In order to build the project, use the following CMake commands:
 
 ```
 cmake -S . -B build
