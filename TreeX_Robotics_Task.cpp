@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     for (const pair<string,array<double,6>>& p : dict)
     {
         std::cout << "Sensor: " << p.first << std::endl;
-        std::cout << p.second[0] << " lines" << std::endl;
+        std::cout << p.second[0] << " reports" << std::endl;
         std::cout << "min: " << p.second[1] << std::endl;
         std::cout << "max: " << p.second[2] << std::endl;
         std::cout << "mean: " << p.second[3]/p.second[0] << std::endl;
