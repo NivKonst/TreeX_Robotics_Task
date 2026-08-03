@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     string filename;
-    double threshold=500;
+    int threshold=500;
     if (argc >= 2)
     {
         filename = argv[1];
@@ -38,7 +38,8 @@ int main(int argc, char *argv[])
     std::map<string, array<double,6>> dict;
     std::array<string, 3> parts;
     int malformed_counter = 0;
-    double value_num, timestamp_num;
+    int timestamp_num;
+    double value_num;
     while (std::getline(f,line))
     {
         if (is_valid_line(line))
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
             sensor_id = parts[1];
             value = parts[2];
             value_num = stold(value);
-            timestamp_num = stold(timestamp);
+            timestamp_num = stoi(timestamp);
             if (dict.find(sensor_id) == dict.end())
             {
                 dict[sensor_id] = array<double, 6>();
