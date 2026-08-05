@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
             }
         }
     }
-    //filename = "sample_log.txt";
     std::ifstream f(filename);
     if (!f.is_open()) 
     {
@@ -35,7 +34,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     string line, timestamp, sensor_id, value;
-    std::map<string, array<double,6>> dict;
+    std::unordered_map<string, array<double,6>> dict;
     std::array<string, 3> parts;
     int malformed_counter = 0;
     int timestamp_num;
